@@ -1,0 +1,27 @@
+ string printMinNumberForPattern(string S){
+        // code here 
+        int num=1;
+        string ans="";
+        stack<int> st;
+        for(auto i:S){
+            if (i=='D'){
+                st.push(num);
+                num++;
+            }
+            else{
+                st.push(num);
+                num++;
+                while(!st.empty()){
+                    ans+=to_string(st.top());
+                    st.pop();
+                }
+            }
+        }
+        st.push(num);
+        while(!st.empty()){
+                    ans+=to_string(st.top());
+                    st.pop();
+                }
+                return ans;
+    }
+};
